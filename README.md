@@ -1,6 +1,6 @@
-# [riskozoslovenska.github.io](https://riskozoslovenska.github.io/)
+# [riskozs.github.io](https://riskozs.github.io/)
 
-My personal website. Planning to get a `riskozo.sk` domain… at some point.
+My personal website.
 
 
 ## Building

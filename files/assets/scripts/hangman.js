@@ -1,6 +1,6 @@
 "use strict";
 /*
-	Original script by RiskoZoSlovenska, 2021-12-06
+	Original script by RiskoZS, 2021-12-06
 
 	Some pages I found helpful:
 		https://chanind.github.io/javascript/svg/2019/01/13/manipulating-and-animating-svg-with-raw-javascript.html

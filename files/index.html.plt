@@ -17,7 +17,7 @@
 		</h1>
 		<ul class="xs:inline-list">
 			<li>
-				<a href="https://github.com/RiskoZoSlovenska">Programming</a>
+				<a href="https://github.com/RiskoZS">Programming</a>
 			</li>
 		</ul>
 	</main>

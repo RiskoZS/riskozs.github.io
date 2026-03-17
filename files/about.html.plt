@@ -12,28 +12,26 @@
 
 		<figure class="mx-auto md:mx-10 md:mb-0 md:float-right">
 			<img class="bg-gray-700 rounded-md" width="200" height="200" src="./assets/images/pfp.png" alt="My PFP">
-			<figcaption>Art by Choir</figcaption>
+			<figcaption>Art by <span title="rur">rur</span></figcaption>
 		</figure>
 		<p>
 			Hi there; you seem to have found me.
 		</p>
 		<p>
 			As you might already know, I’m <b>RiskoZS</b>, but you can call me <b>Risko</b>.
-			I write stuff sometimes. My favourite language is <a href="https://www.lua.org/">Lua</a>, but I also have some
-			moderate experience with a bunch of other languages, including <a href="https://www.python.org/">Python</a>,
-			<a href="https://www.c-language.org/">C</a>, <a href="https://en.wikipedia.org/wiki/English_language">English</a>,
-			<a href="https://www.java.com/">Java</a> and (unfortunately) <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>.
+			I write stuff sometimes. My favourite language to do so in is <a href="https://www.lua.org/">Lua</a>, but I also have
+			some experience with <a href="https://www.python.org/">Python</a>, <a href="https://www.c-language.org/">C</a>/<a href="https://isocpp.org/">C++</a>,
+			<a href="https://en.wikipedia.org/wiki/English_language">English</a>, <a href="https://www.java.com/">Java</a>
+			and (unfortunately) <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a>/<a href="https://www.typescriptlang.org/">TS</a>.
 			I’m afraid there’s not much else to me than that at the moment, but feel free to check back in a couple of years.
 		</p>
 
 		<h2>Get In Touch</h2>
 		<ul class="flex justify-center flex-wrap gap-14 mb-14 px-5">
 # 			for _, contact in ipairs({
-# 				{"https://github.com/RiskoZoSlovenska", "github.svg", "The GitHub logo", "RiskoZoSlovenska"},
-# 				{"https://discord.com/users/469641305669107713", "discord.svg", "The Discord logo", "riskozoslovenska"},
+# 				{"https://github.com/RiskoZS", "github.svg", "The GitHub logo", "RiskoZS"},
+# 				{"https://discord.com/users/469641305669107713", "discord.svg", "The Discord logo", "riskozs"},
 # 				{"mailto:riskozoslovenska@gmail.com", "mail.svg", "The Gmail logo", "riskozoslovenska<wbr>@gmail.com"},
-# 				{"https://www.youtube.com/channel/UCWCC6wm037u-lSeF2yfFKbw", "youtube.png", "The YouTube logo", "RiskoZoSlovenska"},
-# 				{"https://steamcommunity.com/profiles/76561199122286912", "steam.svg", "The Steam logo", "RiskoZoSlovenska"},
 # 				{"https://pcpartpicker.com/b/mGTCmG", "computer.svg", "An image of a computer", "<span class='whitespace-nowrap'>RZS-TANAR</span>"},
 # 			}) do
 			<li class="relative block group">
@@ -66,7 +64,7 @@
 			comfortable reading and mobile support. If something doesn’t work for you, stop using an old/obscure browser (and use
 			<a href="https://www.mozilla.org/en-CA/firefox/new/">Firefox</a> instead!). If it still doesn’t work, or if you have
 			ideas for improvement, shoot me an <a href="mailto:riskozoslovenska@gmail.com">email</a>/<a href="https://discord.com/users/469641305669107713">DM</a>
-			or <a href="https://github.com/RiskoZoSlovenska/riskozoslovenska.github.io/issues/new">open an issue</a>.
+			or <a href="https://github.com/RiskoZS/riskozs.github.io/issues/new">open an issue</a>.
 		</p>
 
 		<h2>Credits</h2>
@@ -101,7 +99,7 @@
 			</li>
 		</ul>
 		<p>
-			Feel free to check out the <a href="https://github.com/RiskoZoSlovenska/riskozoslovenska.github.io">source code</a>!
+			Feel free to check out the <a href="https://github.com/RiskoZS/riskozs.github.io">source code</a>!
 		</p>
 	</main>
 </body>

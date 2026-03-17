@@ -30,7 +30,7 @@ jobs:
       - name: Checkout creative writing repository
         uses: actions/checkout@v4
         with:
-          repository: RiskoZoSlovenska/creative-writing
+          repository: RiskoZS/creative-writing
           path: creative-writing
           submodules: recursive
           token: ${{ secrets.GIT_CREDENTIALS }}
