@@ -155,7 +155,8 @@
 # 	}
 # end
 #
-# -- Current Largest Issue #: 41
+# local LARGEST_ISSUE = 44
+#
 # local issues = {
 # -- MARK: Unresolved
 # 	Issue(8, "(Some) Flatpaks don’t use the system cursor theme", false, ALL, [[
@@ -187,7 +188,7 @@
 # 	]]),
 # 	Issue(37, "The icons of certain apps have black backgrounds/are rendered wrong", false, { FEDORA_KDE }, [[
 # 		This has been reported <a href="https://bugs.kde.org/show_bug.cgi?id=448234">here</a>. The bug has been marked as RESOLVED
-# 		UPSTREAM (QtSvg, the renderer to blame, was/is getting improvements), but as of <time>2025-01-08</time>, some icons
+# 		UPSTREAM (QtSvg, the renderer to blame, was/is getting improvements), but as of <time>2026-03-28</time>, some icons
 # 		are still mis-rendered.
 # 	]]),
 # 	Issue(38, "<code>os-prober</code> does not detect Windows 10", false, { FEDORA_KDE }, [[
@@ -209,6 +210,14 @@
 # 		Credit goes to <a href="https://bbs.archlinux.org/viewtopic.php?pid=1805919#p1805919">these</a>
 # 		<a href="https://bbs.archlinux.org/viewtopic.php?pid=2022765#p2022765">two</a> posts. Of course, don’t forget to run
 # 		<code>sudo grub2-mkconfig -o /etc/grub2.cfg</code> to apply changes.
+# 	]]),
+# 	Issue(44, "The mute indicator LED on my laptop is always off", false, { FEDORA_KDE }, [[
+# 		While resolving <a href="#42">#42</a>, I discovered that my Fn+F8 key (the mute key) has a small white LED that is
+# 		supposed to turn on when sound is muted. The key itself works, but the LED does so only under Windows. Strangely, unlike
+# 		the Caps Lock LED (which works fine and looks otherwise identical), there is no entry in <code>/sys/class/leds/</code> for
+# 		the mute LED, so I cannot toggle it programmatically either. I’m guessing it may be some special LED that’ controlled by
+# 		the sound driver, and I fear that even if I found the correct model override, it would conflict with the solution for
+# 		<a href="#43">#43</a>. Either way, it’s an extremely small detail and not a big deal.
 # 	]]),
 # -- MARK: Resolved
 # 	Issue(1, "PC wakes up immediately after being suspended", true, ALL, [[
@@ -507,6 +516,36 @@
 # 		by displaying error messages and shutting down gracefully upon failure. Personally, I think giving users unlimited tries
 # 		is a better option, but honestly anything is better than the current behaviour.
 # 	]]),
+# 	Issue(42, "Some keys on my laptop (e.g. the NitroSense button) don’t register", true, { FEDORA_KDE }, [[
+# 		Certain keys, such as the NitroSense key or the power button on my Acer Nitro 5 laptop don’t register at all; they don’t
+# 		perform their intended function and cannot be rebound.
+# 	]], [[
+# 		Running <code>sudo evtest</code>, selecting the keyboard input device and pressing the keys shows that they emit scan
+# 		codes but no keycodes. I found <a href="https://www.reddit.com/r/AcerNitro/comments/1nfi63q/comment/ob3ducm/">this Reddit comment</a>
+# 		which suggests using systemd’s hwdb to map the scan codes, which pointed me to
+# 		<a href="https://github.com/systemd/systemd/blob/421bdc489f303800789c86e2f7f74526d0ae9d9a/hwdb.d/60-keyboard.hwdb">systemd’s <code>60-keyboard.hwdb</code> file</a>.
+# 		Using that, I was able to write mappings for all the affected keys (the linked file describes how to do so) and that
+# 		resolved the issues I was having. Finally, I <a href="https://github.com/systemd/systemd/pull/41396">submitted my changes to systemd</a>
+# 		in hopes they help someone else out.
+# 	]]),
+# 	Issue(43, "Headset microphone isn’t detected on my laptop", true, { FEDORA_KDE }, [[
+# 		On Windows, after letting system updates install the drivers, the (singular) "Microphone" input device automatically
+# 		switches to the headset microphone when I plug in my headset. However, on Linux, the system continues to use the laptop’s
+# 		built-in microphone even when the headset is plugged in. This was quite a problem because I keep my laptop closed and to
+# 		the side when at home, which meant that people in voice calls could not hear me very well.
+# 	]], [[
+# 		I don’t remember where exactly I found the fix (it may have been flagged by Google’s AI search summaries), but the fix is
+# 		as outlined by <a href="https://bbs.archlinux.org/viewtopic.php?pid=1886127#p1886127">this answer</a>: pass the
+# 		<code>model=dell-headset-multi</code> option to the <code>snd-hda-intel</code> kernel module by creating a file in
+# 		<code>/etc/modprobe.d/</code> with the following content:
+# 	]], [[
+#<pre><code class="no-highlight">options snd-hda-intel model=dell-headset-multi</code></pre>
+# 	]], [[
+# 		After doing this, the microphone input device obtains three ports: "Internal Microphone", "Microphone" (always silent) and
+# 		"Headset Microphone", which (with the exception of the middle one) all work as intended. It’s not perfect — the system
+# 		doesn’t automatically switch to the headset port when I plug it in — but that’s a separate issue and something I can live
+# 		with for now.
+# 	]]),
 # }
 
 
@@ -574,6 +613,9 @@
 # 		if not seen[num] then
 # 			error("no issue with number: " .. num, 0)
 # 		end
+# 	end
+# 	if numSeen ~= LARGEST_ISSUE then
+# 		error("incorrect largest issue number: expected " .. LARGEST_ISSUE .. ", got " .. numSeen, 0)
 # 	end
 	</ul>
 	</main>
