@@ -5,6 +5,7 @@
 
 @theme {
 	--font-sans: "Lato", "Calibri", "Roboto", sans-serif;
+	--font-serif: "Georgia", serif;
 	--font-mono: "Inconsolata", "Consolas", ui-monospace;
 
 	--breakpoint-xs: 30rem;
@@ -33,7 +34,7 @@
 	--color-correct: #48ca48;
 	--color-incorrect: #ca4848;
 }
-
+	
 /* MARK: Variants */
 @custom-variant hofoac (&:is(:hover, :focus-within, .custom-focus, :active));
 @custom-variant hofonoac (&:is(:hover, :focus-within, .custom-focus):not(:active));
@@ -88,11 +89,11 @@
 	}
 }
 
-@utility container-for-external {
-	/*
-		Container for externally-loaded content (such as stories) which mainly
-		just provides more sensible defaults, such as list markers.
-	*/
+@utility writing-container {
+	& {
+		@apply font-serif text-[0.95rem] lg:text-[1.15rem]; /*text-[1.15rem];*/
+	}
+
 	& ul {
 		@apply list-disc ml-10;
 	}

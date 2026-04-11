@@ -44,7 +44,7 @@
 #
 # 		authorsNote("note-before")
 
-		<div class="container-for-external relative">
+		<div class="relative">
 			$if(warnings.hasMajorWarning)$
 			<div class="absolute h-full w-full text-center py-16 px-14 bg-gray-700 rounded transition-opacity duration-300
 			data-accepted:opacity-0 data-accepted:pointer-events-none">
@@ -55,7 +55,9 @@
 			</div>
 			$endif$
 
+			<div class="writing-container">
 			$body$
+			</div>
 		</div>
 
 # 		authorsNote("note-after")
