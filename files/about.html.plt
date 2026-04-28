@@ -32,7 +32,7 @@
 # 				{"https://github.com/RiskoZS", "github.svg", "The GitHub logo", "RiskoZS"},
 # 				{"https://discord.com/users/469641305669107713", "discord.svg", "The Discord logo", "riskozs"},
 # 				{"mailto:riskozoslovenska@gmail.com", "mail.svg", "The Gmail logo", "riskozoslovenska<wbr>@gmail.com"},
-# 				{"https://pcpartpicker.com/b/mGTCmG", "computer.svg", "An image of a computer", "<span class='whitespace-nowrap'>RZS-TANAR</span>"},
+# 				{"https://pcpartpicker.com/b/47Mbt6", "computer.svg", "An image of a computer", "<span class='whitespace-nowrap'>RZS-TANAR</span>"},
 # 			}) do
 			<li class="relative block group">
 				<a href="$(contact[1])">
